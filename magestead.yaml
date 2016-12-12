@@ -1,0 +1,26 @@
+vagrantfile:
+    puphpet: false
+    advanced: 'false'
+    vm:
+        box: richdynamix/magestead-ubuntu14-nginx-php70
+        box_url: richdynamix/magestead-ubuntu14-nginx-php70
+        hostname: magestead-test-shop.dev
+        memory: '2048'
+        cpus: '1'
+        chosen_provider: virtualbox
+        network:
+            private_network: 192.168.47.47
+        synced_folder:
+            vflsf_uocnhnxzm524:
+                sync_type: nfs
+magestead:
+    apps:
+        mba_12345:
+            type: magento2
+            dir: /var/www
+            locale: en_GB
+            default_currency: GBP
+            db_name: magestead
+            base_url: test-shop.dev
+    os: ubuntu14
+    server: nginx
